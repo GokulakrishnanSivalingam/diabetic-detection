@@ -169,7 +169,7 @@ body {
     padding: 16px;
     color: var(--muted);
     width: 100%;
-    min-height: 220px; /* gives the mock screen a consistent height */
+    min-height: 270px; /* gives the mock screen a consistent height */
     display: flex;
     flex-direction: column;
     justify-content: center; /* center the inner lines vertically */
@@ -181,7 +181,7 @@ body {
 
 .mock-title {
     height: 18px;
-    width: 58%;
+    width: 78%;
     background: linear-gradient(90deg, #ffffff22, #ffffff11);
     border-radius: 8px;
     margin-bottom: 12px;
@@ -251,8 +251,12 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.02)
 }
 
+
 /* Responsive */
 @media (max-width:900px) {
+   html, body{
+        background: var(--bg2)
+    }
     .hero-grid {
         grid-template-columns: 1fr 320px;
         gap: 1.2rem;
@@ -301,11 +305,11 @@ body {
     }
 
     .device-mockup {
-        max-width: 280px;
+        max-width: 85%;
         margin: 0 auto
     }
 
-    .screen { min-height: 180px; padding: 14px; }
+    .screen { min-height: 220px; padding: 14px; }
     .container {
         padding: 0.75rem
     }
@@ -334,6 +338,7 @@ a:focus {
             background: linear-gradient(180deg, #081121, #071827);
             padding: 1rem;
             border-radius: 12px;
+            margin: 10px;
             text-align: center;
             box-shadow: 0 6px 18px rgba(2, 6, 23, 0.5);
         }
@@ -360,7 +365,7 @@ a:focus {
             gap: 0.8rem;
             align-items: flex-start;
             background: var(--card);
-            padding: 0.85rem;
+            padding: 1.5rem;
             border-radius: 10px;
         }
 
@@ -385,6 +390,14 @@ a:focus {
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .stat{
+               padding: 25px;
+            }
+            .site-footer
+            {
+      background-color: var(--card);
+            }
+            
         }
 
         @media (max-width:640px) {
@@ -406,3 +419,4 @@ a:focus {
     background: transparent;
     text-decoration: underline;
 }
+
