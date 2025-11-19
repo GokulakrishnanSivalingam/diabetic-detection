@@ -1,0 +1,134 @@
+/* Diabetes Prediction - External CSS */
+
+/* Global Theme */
+:root {
+    --bg: #0f1724;
+    --bg2: #0b2545;
+    --card: #0b1220;
+    --accent: #4fd1c5;
+    --accent2: #2bb6ff;
+    --muted: #9aa6b2;
+    --radius: 14px;
+
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* Page Background */
+body {
+    margin: 0;
+    padding: 40px;
+    background: linear-gradient(180deg, var(--bg), var(--bg2));
+    color: #e6eef6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Main Card */
+.container {
+    width: 440px;
+    background: var(--card);
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+    text-align: center;
+}
+
+/* Headings */
+h2 {
+    margin-bottom: 10px;
+    font-size: 1.9rem;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: -8px;
+    margin-bottom: 10px;
+}
+
+/* Section Titles Inside Form */
+.container h3 {
+    color: var(--accent);
+    text-align: left;
+    font-size: 1rem;
+    margin: 18px 0 6px;
+}
+
+/* Inputs */
+input {
+    width: 96%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+input::placeholder {
+    color: var(--muted);
+}
+
+/* Predict Button */
+button {
+    width: 96%;
+    padding: 12px;
+    margin-top: 18px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border: none;
+    color: #042;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Info Box */
+.info-box {
+    background: rgba(255,255,255,0.05);
+    padding: 12px;
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.info-box p {
+    color: #e6eef6;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Back Button */
+.back-btn {
+    margin-top: 25px;
+}
+
+.back-btn a {
+    text-decoration: none;
+    color: #042;
+    padding: 10px 16px;
+    display: inline-block;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 12px;
+    font-weight: 600;
+}
+@media(max-width:500px){
+   input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    font-size: 0.95rem;
+}
+    
+}

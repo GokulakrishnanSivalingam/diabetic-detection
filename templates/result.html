@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="/static/result.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #eef3ff;
+            padding: 40px;
+        }
+        .box {
+            width: 90%;
+            max-width: 900px;
+            background: white;
+            margin: auto;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #ccc;
+        }
+        h2 {
+            text-align: center;
+        }
+        .result {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .positive {
+            background: #ffb3b3;
+            color: #a60000;
+        }
+        .negative {
+            background: #b3ffb3;
+            color: #006600;
+        }
+        table {
+            width: 100%;
+            font-size: 18px;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        td, th {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .btn-box {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+       
+
+        #downloadImageBtn {
+            padding: 10px 20px;
+            background:rgb(90, 90, 216);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="box" id="captureArea">
+
+    <h2>Diabetes Prediction Result</h2>
+  <button id="downloadImageBtn">Download report</button>
+    <div class="result {{ 'positive' if result == 'Diabetic' else 'negative' }}">
+        <strong>{{ result }}</strong>
+    </div>
+
+    <h3>Input Values</h3>
+
+    <table>
+        <tr><th>Feature</th><th>Value</th></tr>
+        <tr><td>Pregnancies</td><td>{{ preg }}</td></tr>
+        <tr><td>Glucose</td><td>{{ glu }}</td></tr>
+        <tr><td>Blood Pressure</td><td>{{ bp }}</td></tr>
+        <tr><td>Skin Thickness</td><td>{{ skin }}</td></tr>
+        <tr><td>Insulin</td><td>{{ ins }}</td></tr>
+        <tr><td>BMI</td><td>{{ bmi }}</td></tr>
+        <tr><td>DPF</td><td>{{ dpf }}</td></tr>
+        <tr><td>Age</td><td>{{ age }}</td></tr>
+    </table>
+
+    <h3>Feature Bar Chart</h3>
+    <canvas id="barChart"></canvas>
+
+    <h3>Risk Pie Chart</h3>
+    <canvas id="pieChart"></canvas>
+
+
+      
+    </div>
+
+</div>
+
+<script>
+    const labels = ["Preg", "Glucose", "BP", "Skin", "Insulin", "BMI", "DPF", "Age"];
+    const values = [
+        {{ preg }}, {{ glu }}, {{ bp }}, {{ skin }},
+        {{ ins }}, {{ bmi }}, {{ dpf }}, {{ age }}
+    ];
+
+    // BAR CHART
+    new Chart(document.getElementById("barChart"), {
+        type: "bar",
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "Input Values",
+                data: values
+            }]
+        }
+    });
+
+    // PIE CHART
+    new Chart(document.getElementById("pieChart"), {
+        type: "pie",
+        data: {
+            labels: ["Diabetic Risk", "Normal"],
+            datasets: [{
+                data: [
+                    {{ 80 if result=='Diabetic' else 30 }},
+                    {{ 20 if result=='Diabetic' else 70 }}
+                ]
+            }]
+        }
+    });
+
+    // DOWNLOAD IMAGE
+    document.getElementById("downloadImageBtn").onclick = function () {
+        const area = document.getElementById("captureArea");
+        html2canvas(area).then(function(canvas) {
+            let link = document.createElement('a');
+            link.download = "diabetes_result.png";
+            link.href = canvas.toDataURL();
+            link.click();
+        });
+    };
+</script>
+
+</body>
+</html>

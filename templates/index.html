@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Diabetics Detection — Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        /* small local styles for stats & precautions */
+       
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <h1>Diabetics Detection </h1>
+                <p class="tag">Predict risk from clinical data — fast, private, explainable.</p>
+            </div>
+            <nav class="nav">
+                <a class="nav-link" href="/learnmore">About</a>
+                <a class="nav-cta" href="/sampledata">diabetes data</a>
+                <a class="nav-cta" href="diabetic.csv" download="diabetic.csv">download file</a>
+            </nav>
+            <button class="nav-toggle" aria-label="Toggle menu" onclick="document.body.classList.toggle('menu-open')">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h2>Detect diabetic risk from clinical data —</h2>
+                    <p>Enter patient features or upload a CSV. Our demo model scores risk and returns an explanation
+                        (demo model only — replace with validated clinical model before use).</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="/mainpage">Diabetics Detection</a>
+                        <a class="btn btn-outline" href="/learnmore">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-card" aria-hidden="true">
+                    <div class="device-mockup">
+                        <div class="screen">
+                            <div class="mock-title">Data Viewer Preview</div>
+                            <div class="mock-lines">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- new: quick stats -->
+        <section class="stats container" aria-labelledby="stats-heading">
+            <h3 id="stats-heading">Quick statistics & guidance</h3>
+            <div class="stat-grid" role="list">
+                <div class="stat" role="listitem">
+                    <h4>~ 537M people</h4>
+                    <p>Estimated global number of adults living with diabetes (WHO, approx.).</p>
+                </div>
+                <div class="stat" role="listitem">
+                    <h4>Annual screening</h4>
+                    <p>Adults over 45 or with risk factors: consider yearly glucose screening and risk assessment.</p>
+                </div>
+                <div class="stat" role="listitem">
+                    <h4>Modifiable risks</h4>
+                    <p>Diet, physical activity, BMI and smoking are key modifiable factors to reduce risk.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- new: precautions and actionable tips -->
+         
+        <section class="container">
+            
+           
+            <div class="precautions">
+                 <h3>Precautions & actionable tips</h3>
+                <div class="precaution">
+                    
+                    <div style="width:8px;height:8px;background:var(--accent);border-radius:50%;margin-top:6px"></div>
+                    <div>
+                        <b>Routine monitoring</b>
+                        <div style="color:var(--muted)">Regularly check fasting glucose/HbA1c if you have risk factors
+                            (age, family history, high BMI).</div>
+                    </div>
+                </div>
+
+                <div class="precaution">
+                    <div style="width:8px;height:8px;background:#2bb6ff;border-radius:50%;margin-top:6px"></div>
+                    <div>
+                        <b>Healthy lifestyle</b>
+                        <div style="color:var(--muted)">Adopt a balanced diet, increase physical activity and maintain
+                            healthy weight to lower risk.</div>
+                    </div>
+                </div>
+
+                <div class="precaution">
+                    <div style="width:8px;height:8px;background:#ffd166;border-radius:50%;margin-top:6px"></div>
+                    <div>
+                        <b>Medication & follow-up</b>
+                        <div style="color:var(--muted)">If diagnosed, follow clinician guidance on medication,
+                            monitoring and complications screening.</div>
+                    </div>
+                </div>
+
+                <div class="precaution">
+                    <div style="width:8px;height:8px;background:#f87171;border-radius:50%;margin-top:6px"></div>
+                    <div>
+                        <b>When to seek care</b>
+                        <div style="color:var(--muted)">Severe thirst, unexplained weight loss, frequent urination,
+                            blurred vision — seek medical care promptly.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features container">
+            <h3>Why use data-based detection?</h3>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h4>Clinical features</h4>
+                    <p>Use blood tests, vitals and demographics to estimate risk without imaging.</p>
+                </div>
+                <div class="feature">
+                    <h4>Batch & single patient</h4>
+                    <p>Submit individual values or a CSV of many patients for batch scoring.</p>
+                </div>
+                <div class="feature">
+                    <h4>Explainable outputs</h4>
+                    <p>Model returns a risk score and feature importances to help interpretation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about container">
+            <h3>About the demo</h3>
+            <p>This demo trains a simple classifier on synthetic/sample data to show how data‑driven detection works.
+                Replace training data and validate thoroughly before clinical use.</p>
+            <a class="btn btn-primary" href="homepage.html">Open Data Viewer</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>About</h4>
+                    <p style="color:var(--muted)">Diabetics Detection is a demo tool to explore data‑driven risk
+                        scoring. Not for clinical use without validation.</p>
+                </div>
+
+                <div>
+                    <h4>Quick links</h4>
+                    <ul style="list-style:none;padding:0;margin:0;color:var(--muted)">
+                        <li><a class="nav-link" href="/sampledata">Sample data</a></li>
+                        <li><a class="nav-link" href="/mainpage">Data viewer</a></li>
+                        <li><a class="nav-link" href="/learnmore">Learn more</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Resources</h4>
+                    <ul style="list-style:none;padding:0;margin:0;color:var(--muted)">
+                        <li><a class="nav-link" href="https://www.who.int/health-topics/diabetes">WHO — Diabetes</a>
+                        </li>
+                        <li><a class="nav-link" href="https://www.cdc.gov/diabetes/index.html">CDC — Diabetes</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Contact</h4>
+                    <p style="color:var(--muted);margin:0">For feedback or support, email: <a class="nav-link"
+                            href="mailto:support@example.com">support@example.com</a></p>
+                </div>
+            </div>
+
+            <div
+                style="margin-top:1rem;border-top:1px solid rgba(255,255,255,0.03);padding-top:1rem;color:var(--muted);font-size:0.9rem">
+                <p style="margin:0">© <span id="year"></span> Diabetics Detection — Demo only. Not for diagnosis. Always
+                    consult a healthcare professional for medical advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.querySelectorAll('.nav-link, .nav-cta, .btn').forEach(el => {
+            el.addEventListener('click', () => document.body.classList.remove('menu-open'));
+        });
+    </script>
+</body>
+
+</html>

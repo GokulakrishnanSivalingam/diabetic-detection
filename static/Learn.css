@@ -1,0 +1,101 @@
+/* Learn More Page - Clean Dark UI */
+:root{
+  --bg1:#0f1724;
+  --bg2:#0b2545;
+  --accent:#4fd1c5;
+  --muted:#9aa6b2;
+  --card:#0b1220;
+  --glass: rgba(255,255,255,0.04);
+  --radius:14px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+}
+
+body{
+  margin:0;
+  padding:0;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:#e6eef6;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+  padding:1.5rem;
+}
+
+/* Page Title */
+.page-header{
+  text-align:center;
+  padding:2rem 0 1.2rem;
+}
+
+.page-header h1{
+  margin:0;
+  font-size:2rem;
+  letter-spacing:0.3px;
+}
+
+.page-header p{
+  margin:0.4rem 0 0;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+/* Section Blocks */
+.section{
+  background:var(--card);
+  padding:1.4rem 1.5rem;
+  margin:1.2rem 0;
+  border-radius:var(--radius);
+  box-shadow:0 6px 20px rgba(0,0,0,0.45);
+}
+
+.section h2{
+  margin:0 0 .6rem;
+  font-size:1.35rem;
+}
+
+.section p{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* Highlights */
+.info-box{
+  border-left:4px solid var(--accent);
+  padding-left:1rem;
+  margin:1rem 0;
+  background:var(--glass);
+  border-radius:10px;
+}
+
+.list{
+  margin:0.7rem 0 0;
+  padding-left:1.2rem;
+}
+
+.list li{
+  margin:0.35rem 0;
+  color:var(--muted);
+}
+
+/* CTA button */
+.cta{
+  text-align:center;
+  margin-top:2rem;
+}
+
+.cta a{
+  text-decoration:none;
+  padding:0.7rem 1.2rem;
+  border-radius:12px;
+  font-weight:600;
+  background:linear-gradient(90deg,var(--accent),#2bb6ff);
+  color:#042;
+}
+
+/* Responsive */
+@media(max-width:600px){
+  .page-header h1{font-size:1.45rem;}
+  .section h2{font-size:1.15rem;}
+}
